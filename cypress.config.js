@@ -6,5 +6,8 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     baseUrl:"https://demo.productionready.io/#/",
+    trashAssetsBeforeRuns:true,
+    video:true,
+    videoCompression: 20,
   },
 });
