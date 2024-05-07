@@ -34,7 +34,7 @@ describe("Task2",()=>{
     it('Search for product test case', () => {
         cy.get(".card-body")
         cy.get(".row.search-row").click()
-        cy.get("#SearchProductName").type("Laptop123")
+        cy.get("#SearchProductName").type("Laptop123",{force:true})
         cy.get("#search-products").click({force:true})
         // assertions (Then)
         cy.get(".table.table-bordered").contains("Laptop123").should("be.visible")
@@ -48,7 +48,7 @@ describe("Task2",()=>{
         cy.wait(1000)
        cy.get("th > .mastercheckbox").first().click()
        cy.get("#delete-selected").click()
-       cy.wait(1000)
+       cy.wait(2000)
        cy.get("#delete-selected-action-confirmation-submit-button").click()
        cy.get(".dataTables_empty").should("be.visible")
        .and("contain","No data available in table")
